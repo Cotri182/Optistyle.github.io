@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OPTISTYLE - La mejor elección en óptica con soluciones integrales para tu salud visual.">
+    <title>OPTISTYLE - La Mejor Elección en Óptica</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@700&display=swap');
+
+        body {
+            background-color: #ffcccc;
+            color: #333;
+            font-family: 'Archivo', sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 1.15em;
+        }
+
+        header, footer {
+            background-color: #ffcccc;
+            color: #000000;
+            text-align: center;
+            padding: 1em 0;
+            font-size: 1.15em;
+        }
+
+        header img {
+            width: 350px;
+            vertical-align: middle;
+            margin-bottom: 7px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #000000;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.15em;
+        }
+
+        .social-icons {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .social-icons img {
+            width: 100px;
+            height: 100px;
+            vertical-align: middle;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        .hero {
+            background-image: url('imagen_destacada.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0a0000;
+            text-shadow: 2px 2px 5px #000;
+        }
+
+        .hero h2 {
+            font-size: 2.88em;
+            padding: 5px 0;
+        }
+
+        .productos h2, 
+        .ofertas h2, 
+        .servicios h2, 
+        .acerca h2 {
+            border-bottom: 2px solid #000000;
+            padding: 10px 0;
+            color: #000000;
+            text-shadow: 2px 2px 5px #000;
+            font-size: 2.88em;
+        }
+
+        .galeria {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .galeria img {
+            width: calc(70% - 20px);
+            max-width: 100%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .galeria img:hover {
+            transform: scale(1.05);
+        }
+
+        .mision-vision {
+            text-align: center;
+            color: #000000;
+            padding: 10px 0;
+        }
+
+        @media (min-width: 600px) {
+            .galeria img {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (min-width: 900px) {
+            .galeria img {
+                width: calc(33.333% - 20px);
+            }
+        }
+    </style>
+    <script>
+        function shuffleImages(gallery) {
+            const images = Array.from(gallery.children);
+            for (let i = images.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [images[i].style.order, images[j].style.order] = [images[j].style.order, images[i].style.order];
+            }
+        }
+
+        function randomizeImagePositions() {
+            const productGallery = document.querySelector('.galeria.productos');
+            const serviceGallery = document.querySelector('.galeria.servicios');
+            shuffleImages(productGallery);
+            shuffleImages(serviceGallery);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            randomizeImagePositions();
+            setInterval(randomizeImagePositions, 5000);
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <img src="logo-optistyle.png" alt="Logo de OPTISTYLE">
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#ofertas">Ofertas</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#acerca">Acerca de Nosotros</a></li>
+            </ul>
+        </nav>
+        <div class="social-icons">
+            <a href="https://www.instagram.com" target="_blank">
+                <img src="instagram-icon.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="facebook-icon.png" alt="Facebook">
+            </a>
+            <a href="https://wa.me/573123778559" target="_blank">
+                <img src="whatsapp-icon.png" alt="WhatsApp">
+            </a>
+            <a href="https://www.google.com/maps" target="_blank">
+                <img src="ubicacion.png" alt="Ubicación">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <h2>Bienvenidos a OPTISTYLE</h2>
+        </section>
+
+        <section class="productos" id="productos">
+            <h2>Productos</h2>
+            <p>Explora nuestra variedad de lentes oftálmicos y monturas de diseño.</p>
+            <div class="galeria productos">
+                <img src="producto1.jpg" alt="Lente oftálmico 1">
+                <img src="producto2.jpg" alt="Lente oftálmico 2">
+                <img src="producto3.jpg" alt="Lente oftálmico 3">
+            </div>
+        </section>
+
+        <section class="ofertas" id="ofertas">
+            <h2>Ofertas</h2>
+            <p>Descuentos en la primera compra, amor y amistad y paquetes familiares.</p>
+            <video controls style="display: block; margin: 0 auto; width: 25%;">
+                <source src="OptiPromo.mp4" type="video/mp4">
+                Tu navegador no soporta la etiqueta de video.
+            </video>
+        </section>
+
+        <section class="servicios" id="servicios">
+            <h2>Servicios</h2>
+            <p>Exámenes de la Vista, Ajustes y Reparaciones.</p>
+            <div class="galeria servicios">
+                <img src="Servicios.JPG" alt="Servicio 1">
+                <img src="Servicios1.JPG" alt="Servicio 2">
+                <img src="Servicios2.JPG" alt="Servicio 3">
+            </div>
+        </section>
+
+        <section class="acerca" id="acerca">
+            <h2>Acerca de Nosotros</h2>
+            <p>OptiStyle es tu mejor elección en cuidado visual.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 OPTISTYLE. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
